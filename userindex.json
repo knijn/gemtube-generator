@@ -1,0 +1,8 @@
+{
+    "users":[
+        {
+            "username":"knijn",
+            "uri":"gemini://knijn.ga/videos/index.json"
+        }
+    ]
+}
