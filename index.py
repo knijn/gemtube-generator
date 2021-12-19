@@ -2,7 +2,7 @@ import os
 import sys
 import json
 def findUser(targetUser):
-    userIndexFileHandle = open("userindex.json","r")
+    userIndexFileHandle = open("/home/debian/gemtube-generator/userindex.json","r")
     userIndexFile = userIndexFileHandle.read()
     userIndexFileHandle.close()
     #print(userIndexFile)
