@@ -13,8 +13,9 @@ def findUser(targetUser):
             return o
 
 def printHeader():
-    print("% gem_header 20 'text/gemini; charset=utf-8; lang=en'")
-
+    #print("% gem_header 20 'text/gemini; charset=utf-8; lang=en'")
+    print("=> / ↩ Home")
+    print("=> ./ ⬆ Up")
 if sys.argv[1] == "page":
     user = findUser(sys.argv[2])
     #print(user["uri"])
@@ -22,10 +23,12 @@ if sys.argv[1] == "page":
     stream = os.popen(command)
     indexFile = stream.read()
     indexJSON = json.loads(indexFile)
+    printHeader()
     print("# Gemtube user: " + indexJSON["user"])
     for o in indexJSON["videos"]:
         print("## " + o["title"])
         print(o["description"])
+        print("> Downloads:")
         for qo in o["downloads"]:
             print("=> " + qo["uri"] + " " + qo["quality"] + " (" + qo["filesize"] + ")")
     
