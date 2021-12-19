@@ -32,4 +32,13 @@ if sys.argv[1] == "page":
         for qo in o["downloads"]:
             print("=> " + qo["uri"] + " " + qo["quality"] + " (" + qo["filesize"] + ")")
     
-    
+if sys.argv[1] == "list":
+    printHeader()
+    print("# List of users on gemtube")
+    userIndexFileHandle = open("/home/debian/gemtube-generator/userindex.json","r")
+    userIndexFile = userIndexFileHandle.read()
+    userIndexFileHandle.close()
+    #print(userIndexFile)
+    userIndexJSON = json.loads(userIndexFile)
+    for o in userIndexJSON["users"]:
+        print("=> gemini://knijn.ga/videos/gemtube/page/" + o["username"] + ".bliz " + o["username"] )
