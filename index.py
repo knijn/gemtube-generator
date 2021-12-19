@@ -13,9 +13,7 @@ def findUser(targetUser):
             return o
 
 def printHeader():
-    print("%%%")
-    print("gem_header 20 'text/gemini; charset=utf-8; lang=en'")
-    print("%%%")
+    print("% gem_header 20 'text/gemini; charset=utf-8; lang=en'")
 
 if sys.argv[1] == "page":
     user = findUser(sys.argv[2])
