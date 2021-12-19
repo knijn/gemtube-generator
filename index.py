@@ -22,7 +22,6 @@ if sys.argv[1] == "page":
     stream = os.popen(command)
     indexFile = stream.read()
     indexJSON = json.loads(indexFile)
-    printHeader()
     print("# Gemtube user: " + indexJSON["user"])
     for o in indexJSON["videos"]:
         print("## " + o["title"])
